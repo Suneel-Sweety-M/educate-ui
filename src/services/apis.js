@@ -1,3 +1,27 @@
+import axios from "axios";
+
+const { REACT_APP_API_URL } = process.env;
+
+export const API = axios.create({
+  baseURL: REACT_APP_API_URL,
+  responseType: "json",
+  withCredentials: true, // Include cookies in requests
+});
+
+export const apiRequest = async ({ url, data, method }) => {
+  try {
+    const result = await API(url, {
+      method: method || "GET",
+      data: data || {},
+    });
+
+    return result?.data;
+  } catch (error) {
+    const err = error.response.data;
+    console.log(err);
+    return { status: "fail", message: err.message };
+  }
+};
 
 // ================================
 

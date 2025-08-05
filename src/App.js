@@ -1,24 +1,59 @@
-import logo from './logo.svg';
 import './App.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import ForgotPassword from './pages/ForgotPassword';
+import ChangePassword from './pages/ChangePassword';
+import Courses from './pages/Courses';
+import CourseDetails from './pages/CourseDetails';
+import OurMission from './pages/OurMission';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+import PageNotFound from './pages/PageNotFound';
+import Contact from './pages/Contact';
+import About from './pages/About';
+import Careers from './pages/Careers';
+import CareerDetails from './pages/CareerDetails';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ChangePassword />} />
+        
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/mission" element={<OurMission />} />
+        <Route path="/course/:courseId" element={<CourseDetails />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/career/:id" element={<CareerDetails />} />
+
+        <Route path="/about-us" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/terms-conditions" element={<Terms />} />
+        <Route path="/privacy-policy" element={<Privacy />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </>
   );
 }
 

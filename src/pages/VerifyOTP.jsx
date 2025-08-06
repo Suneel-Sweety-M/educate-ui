@@ -67,9 +67,7 @@ const VerifyOTP = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'url(/images/background.jpg) no-repeat center center',
-      backgroundSize: 'cover',
-      backgroundColor: '#000',
+      background: 'linear-gradient(135deg, #0a0a2a 0%, #000033 50%, #0a0a2a 100%)',
       position: 'relative'
     }}>
       <div style={{
@@ -79,7 +77,10 @@ const VerifyOTP = () => {
         transform: 'translate(-50%, -50%)',
         maxWidth: '400px',
         width: '100%',
-        padding: '20px'
+        padding: '20px',
+        backgroundColor: 'rgba(10, 10, 42, 0.8)',
+        borderRadius: '10px',
+        boxShadow: '0 4px 20px rgba(0, 0, 51, 0.5)'
       }}>
         <div style={{
           display: 'flex',
@@ -98,10 +99,11 @@ const VerifyOTP = () => {
           fontSize: '24px',
           fontWeight: 'bold',
           textAlign: 'center',
-          marginTop: '28px'
+          marginTop: '28px',
+          textShadow: '0 0 10px rgba(100, 149, 237, 0.5)'
         }}>Enter OTP</h2>
         <p style={{
-          color: '#fff',
+          color: '#a0a0ff',
           textAlign: 'center',
           marginTop: '8px'
         }}>A 4-digit code was sent to {email}</p>
@@ -125,12 +127,13 @@ const VerifyOTP = () => {
                   width: '48px',
                   height: '48px',
                   textAlign: 'center',
-                  backgroundColor: '#fff',
-                  color: '#000',
+                  backgroundColor: 'rgba(20, 20, 60, 0.8)',
+                  color: '#fff',
                   borderRadius: '6px',
-                  border: 'none',
+                  border: '1px solid #6495ed',
                   fontSize: '18px',
-                  boxSizing: 'border-box'
+                  boxSizing: 'border-box',
+                  boxShadow: '0 0 10px rgba(100, 149, 237, 0.3)'
                 }}
                 required
               />
@@ -141,17 +144,22 @@ const VerifyOTP = () => {
             type="submit"
             style={{
               marginTop: '20px',
-              backgroundColor: '#fff',
-              color: '#000',
+              backgroundColor: '#6495ed',
+              color: '#fff',
               fontWeight: 'bold',
               width: '100%',
-              padding: '8px',
-              borderRadius: '9999px',
+              padding: '12px',
+              borderRadius: '6px',
               cursor: isLoading || otp.some(digit => !digit) ? 'not-allowed' : 'pointer',
               border: 'none',
-              opacity: isLoading || otp.some(digit => !digit) ? '0.6' : '1'
+              opacity: isLoading || otp.some(digit => !digit) ? '0.6' : '1',
+              fontSize: '16px',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 2px 10px rgba(100, 149, 237, 0.5)'
             }}
             disabled={isLoading || otp.some(digit => !digit)}
+            onMouseOver={(e) => !isLoading && !otp.some(digit => !digit) && (e.target.style.backgroundColor = '#4169e1')}
+            onMouseOut={(e) => !isLoading && !otp.some(digit => !digit) && (e.target.style.backgroundColor = '#6495ed')}
           >
             {isLoading ? (
               <svg
@@ -191,18 +199,20 @@ const VerifyOTP = () => {
           onClick={handleResend}
           style={{
             marginTop: '12px',
-            color: '#fff',
+            color: '#6495ed',
             fontSize: '14px',
             background: 'none',
             border: 'none',
             cursor: isLoading ? 'not-allowed' : 'pointer',
-            opacity: isLoading ? '0.6' : '1'
+            opacity: isLoading ? '0.6' : '1',
+            fontWeight: '500',
+            transition: 'all 0.3s ease'
           }}
-          onMouseOver={(e) => e.target.style.textDecoration = isLoading ? 'none' : 'underline'}
+          onMouseOver={(e) => !isLoading && (e.target.style.textDecoration = 'underline')}
           onMouseOut={(e) => e.target.style.textDecoration = 'none'}
           disabled={isLoading}
         >
-          Resend OTP
+          Didn't receive code? <span style={{ fontWeight: 'bold' }}>Resend OTP</span>
         </button>
       </div>
     </div>

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
@@ -34,9 +33,9 @@ const ChangePassword = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'url(/images/background.jpg) no-repeat center center',
+      background: 'linear-gradient(45deg, #0000ff, #000000)',
       backgroundSize: 'cover',
-      backgroundColor: '#000',
+      backgroundColor: 'transparent',
       position: 'relative'
     }}>
       <div style={{
@@ -84,18 +83,20 @@ const ChangePassword = () => {
             type="submit"
             style={{
               marginTop: '20px',
-              backgroundColor: '#1f2937',
+              backgroundColor: '#4b5563',
               color: '#fff',
-              padding: '12px 24px',
-              borderRadius: '0.75rem',
+              padding: '8px',
+              borderRadius: '9999px',
               cursor: isLoading ? 'not-allowed' : 'pointer',
               fontSize: '13px',
+              fontWeight: 'bold',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '100%',
               border: 'none',
-              opacity: isLoading ? '0.6' : '1'
+              opacity: isLoading ? '0.6' : '1',
+              width: '100%',
+              boxSizing: 'border-box'
             }}
             disabled={isLoading}
           >

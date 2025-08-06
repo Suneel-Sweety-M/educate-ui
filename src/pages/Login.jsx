@@ -36,9 +36,9 @@ const Login = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'url(/images/background.jpg) no-repeat center center',
+      background: 'linear-gradient(45deg, #0000ff, #000000)',
       backgroundSize: 'cover',
-      backgroundColor: '#000',
+      backgroundColor: 'transparent',
       position: 'relative'
     }}>
       <div style={{
@@ -58,7 +58,7 @@ const Login = () => {
         }}>
           <img
             src="/digital.png"
-            alt=""
+            alt="Digital Launchpad Logo"
             style={{ height: '60px' }}
           />
         </div>
@@ -104,26 +104,6 @@ const Login = () => {
               }}
               required
             />
-            <div style={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              alignItems: 'flex-end'
-            }}>
-              <Link
-                to="/forgot-password"
-                style={{
-                  color: '#93c5fd',
-                  fontSize: '13px',
-                  cursor: 'pointer',
-                  marginTop:"12px",
-                  textDecoration: 'none'
-                }}
-                onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
-                onMouseOut={(e) => e.target.style.textDecoration = 'none'}
-              >
-                Forgot password?
-              </Link>
-            </div>
           </div>
 
           <button
@@ -133,7 +113,7 @@ const Login = () => {
               backgroundColor: '#fff',
               color: '#000',
               fontWeight: 'bold',
-              padding: '8px 24px',
+              padding: '8px',
               borderRadius: '9999px',
               cursor: isLoading ? 'not-allowed' : 'pointer',
               fontSize: '13px',
@@ -141,7 +121,9 @@ const Login = () => {
               alignItems: 'center',
               justifyContent: 'center',
               border: 'none',
-              opacity: isLoading ? '0.6' : '1'
+              opacity: isLoading ? '0.6' : '1',
+              width: '100%',
+              boxSizing: 'border-box'
             }}
             disabled={isLoading}
           >
@@ -176,29 +158,41 @@ const Login = () => {
               "Sign In"
             )}
           </button>
-        </form>
 
-        <p style={{
-          marginTop: '28px',
-          color: '#fff',
-          fontSize: '13px',
-          textAlign: 'center'
-        }}>
-          Don't have an account?{" "}
-          <Link
-            to="/register"
-            style={{
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              textDecoration: 'none',
-              color: '#fff'
-            }}
-            onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
-            onMouseOut={(e) => e.target.style.textDecoration = 'none'}
-          >
-            Sign Up
-          </Link>
-        </p>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginTop: '12px'
+          }}>
+            <Link
+              to="/forgot-password"
+              style={{
+                color: '#93c5fd',
+                fontSize: '13px',
+                cursor: 'pointer',
+                textDecoration: 'none'
+              }}
+              onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
+              onMouseOut={(e) => e.target.style.textDecoration = 'none'}
+            >
+              Forgot password?
+            </Link>
+            <Link
+              to="/register"
+              style={{
+                color: '#93c5fd',
+                fontSize: '13px',
+                cursor: 'pointer',
+                textDecoration: 'none'
+              }}
+              onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
+              onMouseOut={(e) => e.target.style.textDecoration = 'none'}
+            >
+              Don't have an account? Sign Up
+            </Link>
+          </div>
+        </form>
       </div>
     </div>
   );

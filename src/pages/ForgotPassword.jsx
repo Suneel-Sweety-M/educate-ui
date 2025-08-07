@@ -15,7 +15,7 @@ const ForgotPassword = () => {
     try {
       const response = await axios.post("http://localhost:8000/api/auth/forgot-password", { email });
       toast.success(response.data.message);
-      setEmail("")
+      setEmail("");
     } catch (error) {
       const errorMessage = error.response?.data?.message || "Failed to send reset link";
       toast.error(errorMessage);
@@ -27,9 +27,9 @@ const ForgotPassword = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'url(/images/background.jpg) no-repeat center center',
+      background: 'linear-gradient(45deg, #0000ff, #000000)',
       backgroundSize: 'cover',
-      backgroundColor: '#000',
+      backgroundColor: 'transparent',
       position: 'relative'
     }}>
       <div style={{
@@ -75,15 +75,18 @@ const ForgotPassword = () => {
               marginTop: '20px',
               backgroundColor: '#4b5563',
               color: '#fff',
-              padding: '8px 24px',
-              borderRadius: '0.75rem',
+              padding: '8px',
+              borderRadius: '9999px',
               cursor: isLoading ? 'not-allowed' : 'pointer',
               fontSize: '13px',
+              fontWeight: 'bold',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               border: 'none',
-              opacity: isLoading ? '0.6' : '1'
+              opacity: isLoading ? '0.6' : '1',
+              width: '100%',
+              boxSizing: 'border-box'
             }}
             disabled={isLoading}
           >

@@ -1,22 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { gsap } from "gsap";
 
 const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
-    role: "user",
+    role: "student",
   });
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const slideRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleToggle = (role) => {
+    setFormData({ ...formData, role });
+  };
+
+  useEffect(() => {
+    const slide = slideRef.current;
+    const xPosition = formData.role === "student" ? 0 : 100; // 100px for Teacher (width of each label)
+    const background = formData.role === "student"
+      ? 'linear-gradient(45deg, #0000ff, #000000)'
+      : 'linear-gradient(45deg, #ff0000, #000000)';
+    
+    gsap.to(slide, {
+      x: xPosition,
+      background: background,
+      duration: 0.5,
+      ease: "power2.inOut",
+    });
+  }, [formData.role]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,9 +57,11 @@ const Register = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'url(/images/background.jpg) no-repeat center center',
+      background: formData.role === "teacher" 
+        ? 'linear-gradient(45deg, #ff0000, #000000)'
+        : 'linear-gradient(45deg, #0000ff, #000000)',
       backgroundSize: 'cover',
-      backgroundColor: '#000',
+      backgroundColor: 'transparent',
       position: 'relative'
     }}>
       <div style={{
@@ -52,14 +75,74 @@ const Register = () => {
       }}>
         <div style={{
           display: 'flex',
-          justifyContent: 'space-between',
-          gap: '40px'
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '20px'
         }}>
           <img
             src="/digital.png"
-            alt=""
+            alt="Digital Launchpad Logo"
             style={{ height: '60px' }}
           />
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            background: '#212121',
+            borderRadius: '12px',
+            padding: '4px',
+            position: 'relative',
+            width: '200px',
+            height: '40px',
+            overflow: 'hidden'
+          }}>
+            <div
+              ref={slideRef}
+              style={{
+                position: 'absolute',
+                top: '4px',
+                left: '4px',
+                width: '96px',
+                height: '32px',
+                background: formData.role === "student" 
+                  ? 'linear-gradient(45deg, #011669, #00000)' 
+                  : 'linear-gradient(45deg, #ff0000, #000000)',
+                borderRadius: '8px',
+                zIndex: 1
+              }}
+            />
+            <label
+              onClick={() => handleToggle("student")}
+              style={{
+                flex: 1,
+                textAlign: 'center',
+                padding: '8px',
+                fontSize: '14px',
+                fontWeight: 'bold',
+                color: formData.role === "student" ? '#fff' : '#b8b8b8',
+                background: 'transparent',
+                cursor: 'pointer',
+                zIndex: 2
+              }}
+            >
+              Student
+            </label>
+            <label
+              onClick={() => handleToggle("teacher")}
+              style={{
+                flex: 1,
+                textAlign: 'center',
+                padding: '8px',
+                fontSize: '14px',
+                fontWeight: 'bold',
+                color: formData.role === "teacher" ? '#fff' : '#b8b8b8',
+                background: 'transparent',
+                cursor: 'pointer',
+                zIndex: 2
+              }}
+            >
+              Teacher
+            </label>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -84,51 +167,25 @@ const Register = () => {
             />
           </div>
 
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginTop: '2px',
-            gap: '10px'
-          }}>
-            <div style={{ marginTop: '20px' }}>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="axxxxx@gmail.com"
-                style={{
-                  padding: '8px',
-                  backgroundColor: '#fff',
-                  color: '#000',
-                  borderRadius: '9999px',
-                  textAlign: 'center',
-                  border: 'none',
-                  width: '300px',
-                  boxSizing: 'border-box'
-                }}
-                required
-              />
-            </div>
-            <div style={{ marginTop: '20px' }}>
-              <select
-                name="role"
-                value={formData.role}
-                onChange={handleChange}
-                style={{
-                  padding: '8px',
-                  backgroundColor: '#fff',
-                  color: '#000',
-                  borderRadius: '9999px',
-                  border: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                <option value="user">User</option>
-                <option value="teacher">Teacher</option>
-              </select>
-            </div>
+          <div style={{ marginTop: '20px' }}>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="axxxxx@gmail.com"
+              style={{
+                padding: '8px',
+                backgroundColor: '#fff',
+                color: '#000',
+                borderRadius: '9999px',
+                textAlign: 'center',
+                border: 'none',
+                width: '100%',
+                boxSizing: 'border-box'
+              }}
+              required
+            />
           </div>
 
           <div style={{ marginTop: '20px' }}>
@@ -142,11 +199,10 @@ const Register = () => {
                 padding: '8px',
                 backgroundColor: '#fff',
                 color: '#000',
-                borderRadius: '120px',
+                borderRadius: '9999px',
                 textAlign: 'center',
                 border: 'none',
                 width: '100%',
-                height:'100%',
                 boxSizing: 'border-box'
               }}
               required
@@ -160,7 +216,7 @@ const Register = () => {
               backgroundColor: '#fff',
               color: '#000',
               fontWeight: 'bold',
-              padding: '8px 24px',
+              padding: '8px',
               borderRadius: '9999px',
               cursor: isLoading ? 'not-allowed' : 'pointer',
               fontSize: '13px',
@@ -168,7 +224,9 @@ const Register = () => {
               alignItems: 'center',
               justifyContent: 'center',
               border: 'none',
-              opacity: isLoading ? '0.6' : '1'
+              opacity: isLoading ? '0.6' : '1',
+              width: '100%',
+              boxSizing: 'border-box'
             }}
             disabled={isLoading}
           >
@@ -203,29 +261,42 @@ const Register = () => {
               "Sign Up"
             )}
           </button>
-        </form>
 
-        <p style={{
-          marginTop: '28px',
-          color: '#fff',
-          fontSize: '13px',
-          textAlign: 'center'
-        }}>
-          Have an account?{" "}
-          <Link
-            to="/login"
-            style={{
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              textDecoration: 'none',
-              color: '#fff'
-            }}
-            onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
-            onMouseOut={(e) => e.target.style.textDecoration = 'none'}
-          >
-            Sign In
-          </Link>
-        </p>
+          <div style={{
+            marginTop: '12px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '20px'
+          }}>
+            <Link
+              to="/forgot-password"
+              style={{
+                color: '#93c5fd',
+                fontSize: '13px',
+                cursor: 'pointer',
+                textDecoration: 'none'
+              }}
+              onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
+              onMouseOut={(e) => e.target.style.textDecoration = 'none'}
+            >
+              Forgot password?
+            </Link>
+            <Link
+              to="/login"
+              style={{
+                color: '#93c5fd',
+                fontSize: '13px',
+                cursor: 'pointer',
+                textDecoration: 'none'
+              }}
+              onMouseOver={(e) => e.target.style.textDecoration = 'underline'}
+              onMouseOut={(e) => e.target.style.textDecoration = 'none'}
+            >
+              Have an account? Sign In
+            </Link>
+          </div>
+        </form>
       </div>
     </div>
   );

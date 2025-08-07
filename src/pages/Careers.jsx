@@ -48,6 +48,7 @@ const Careers = () => {
       image: "https://educate.io/images/Educate_3-p-1080.png",
     }
   ];
+  document.title = "Open Roles - Educate"
   return (
     <div className="bg-black">
       <div className="careers-container">

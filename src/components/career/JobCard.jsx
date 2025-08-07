@@ -1,34 +1,3 @@
-// import { MapPin, Briefcase } from "lucide-react";
-// import { Link } from "react-router-dom";
-
-// const JobCard = ({ job }) => {
-//   return (
-//     <Link to={`/career/${job.id}`} className="job-card">
-//       <div className="job-image-wrapper">
-//         <img
-//           src={job.image}
-//           alt="job"
-//           className="job-image"
-//         />
-//         <div className="job-image-overlay"></div>
-//         <h2 className="job-title-overlay">{job.title}</h2> {/* NEW */}
-//       </div>
-//       <div className="job-meta">
-//         <span className="badge">
-//           <MapPin size={16} />
-//           {job.location}
-//         </span>
-//         <span className="badge">
-//           <Briefcase size={16} />
-//           {/* {job.type} */}
-//           {job.type.replace("-", " ")}
-//         </span>
-//       </div>
-//     </Link>
-//   );
-// };
-
-// export default JobCard;
 import { MapPin, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 

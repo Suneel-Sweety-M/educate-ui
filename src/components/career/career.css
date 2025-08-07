@@ -44,7 +44,6 @@ a:hover {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   opacity: 0.9;
-  /* Optional: gives it a lighter feel */
 }
 
 /* ------------ Job Cards Grid ------------ */
@@ -244,7 +243,7 @@ a:hover {
 }
 
 /* ------------ Title ------------ */
- .job-title {
+.job-title {
   font-size: 5rem;
   font-weight: 200;
   letter-spacing: 0.02em;
@@ -252,7 +251,8 @@ a:hover {
   color: #ffffff;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  font-family: 'SuisseIntl', 'Inter', sans-serif; /* if you're using custom font */
+  font-family: 'SuisseIntl', 'Inter', sans-serif;
+  /* if you're using custom font */
 }
 
 
@@ -294,7 +294,7 @@ a:hover {
   letter-spacing: 0.05em;
 }
 
- .job-meta-item__value {
+.job-meta-item__value {
   font-size: 1.25rem;
   font-weight: 500;
   color: #ffffff;
@@ -317,6 +317,7 @@ a:hover {
   aspect-ratio: 3 / 4;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
+
 @media (max-width: 768px) {
   .job-section {
     background: linear-gradient(to bottom, #0d1a5e 0%, #000000 100%);
@@ -328,11 +329,13 @@ a:hover {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 /* ========== ✅ MOBILE FIXES ========== */
 @media (max-width: 640px) {
   .job-title {

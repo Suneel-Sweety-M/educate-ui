@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { ChevronLeft } from "lucide-react";
-import { Meta } from "../components/career/meta";
 import { Section } from "../components/career/section";
 import '../components/career/career.css';
 
@@ -474,12 +474,16 @@ export default function JobDetail() {
     ];
     const { id } = useParams();
     const job = jobs.find((job) => job.id.toString() === id);
+    useEffect(() => {
+        if (job?.title) {
+            document.title = `${job.title} | Hiring Position`;
+        }
+    }, [job?.title]);
 
     if (!job) return <div className="job-not-found">Job not found.</div>;
 
     return (
         <>
-            <Meta title={job.title} description={job.summary} />
             <Section className="job-section">
                 <div className="job-container">
                     <Link to="/careers" className="job-back-link">
@@ -581,20 +585,16 @@ export default function JobDetail() {
                             {job.shouldNotApplyIf}
                         </SectionBlock>
 
-<SectionBlock title="">
-  <div className="apply-wrapper">
-    <div className="apply-banner">
-      <h2>Think you're a fit? Apply Today</h2>
-      <Link to={job.applyLink || "/apply"} className="apply-now-btn">
-        APPLY NOW
-      </Link>
-    </div>
-  </div>
-</SectionBlock>
-
-
-
-
+                        <SectionBlock title="">
+                            <div className="apply-wrapper">
+                                <div className="apply-banner">
+                                    <h2>Think you're a fit? Apply Today</h2>
+                                    <Link to={job.applyLink || "/apply"} className="apply-now-btn">
+                                        APPLY NOW
+                                    </Link>
+                                </div>
+                            </div>
+                        </SectionBlock>
                     </div>
                 </div>
             </Section>

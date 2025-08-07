@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero-container {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #031442 0%, #050505 70%);
+  padding: 60px 0 0;
+  position: relative;
+}
+
+.hero-text-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  padding: 60px 40px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  font-family: 'THICCCBOI', sans-serif;
+  color: #f3eef7;
+  font-size: 84px; /* Increased from 72px */
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 25px; /* Adjusted */
+  letter-spacing: -2px;
+}
+
+.hero-title-line {
+  display: block;
+}
+
+.hero-description {
+  font-size: 24px; /* Increased from 20px */
+  color: #ccc3c5;
+  margin-bottom: 40px; /* Adjusted */
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.hero-button {
+  background: whitesmoke;
+  color: #464cb3;
+  border: none;
+  padding: 22px 45px; /* Increased from 12px 30px */
+  font-size: 18px; /* Increased from 16px */
+  font-weight: 700;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'THICCCBOI', sans-serif;
+  width: fit-content;
+}
+
+.hero-button:hover {
+  background: gray;
+  transform: translateY(-3px);
+}
+
+/* Cover Image Only */
+.cover-image-container {
+  margin-left: 40%;
+  width: 60%;
+  height: 100vh;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.cover-image:hover {
+  transform: scale(1.55);
+  filter: brightness(1.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 70px; /* Adjusted from 60px */
+  }
+  .hero-description {
+    font-size: 22px; /* Adjusted from 18px */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 100px 20px 60px;
+  }
+  
+  .hero-text-content,
+  .cover-image-container {
+    max-width: 100%;
+    padding-right: 0;
+  }
+  
+  .hero-title {
+    font-size: 56px; /* Adjusted from 48px */
+  }
+  
+  .hero-description {
+    font-size: 20px; /* Adjusted from 18px */
+  }
+  
+  .cover-image-container {
+    margin-top: 40px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 42px; /* Adjusted from 36px */
+  }
+  
+  .hero-title-line {
+    display: inline;
+  }
+  
+  .hero-description {
+    font-size: 18px;
+  }
+  
+  .hero-button {
+    padding: 16px 35px;
+    font-size: 16px;
+  }
+}

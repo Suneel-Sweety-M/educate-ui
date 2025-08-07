@@ -1,0 +1,196 @@
+.course-container {
+  background: linear-gradient(to bottom, #050505, #0a0a33, #10105c);
+  color: #ddd;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px;
+  line-height: 1.7;
+}
+
+/* Hero Section */
+.hero-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.rocket {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 300px;
+}
+
+/* Summary Section */
+.summary {
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.summary h2 {
+  color: #e0e0e0;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.summary p {
+  font-size: 18px;
+  color: rgba(230, 230, 230, 0.8);
+  margin-bottom: 20px;
+}
+
+.highlight {
+  border-left: 4px solid #ccc;
+  padding-left: 20px;
+  margin: 20px 0;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Skills Section */
+.skills {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.skills h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.skills li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 16px;
+  border-radius: 10px;
+  flex: 1 1 calc(50% - 30px); /* Two columns on medium screens */
+  text-align: left;
+}
+
+/* Curriculum Section */
+.curriculum {
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.curriculum h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.curriculum .module {
+  margin-bottom: 30px;
+}
+
+.curriculum h3 {
+  color: #fff;
+  font-size: 22px;
+}
+
+.curriculum p {
+  color: #ccc;
+}
+
+/* Instructor Section */
+.instructor {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.instructor h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.instructor-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.instructor h3 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .summary h2,
+  .skills h2,
+  .curriculum h2,
+  .instructor h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .summary,
+  .skills,
+  .curriculum,
+  .instructor {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .skills ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills li {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+
+  .rocket {
+    width: 200px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary p,
+  .curriculum p,
+  .skills li {
+    font-size: 16px;
+  }
+
+  .highlight {
+    font-size: 18px;
+  }
+
+  .summary h2,
+  .skills h2,
+  .curriculum h2,
+  .instructor h2 {
+    font-size: 24px;
+  }
+
+  .rocket {
+    width: 150px;
+    height: auto;
+  }
+}

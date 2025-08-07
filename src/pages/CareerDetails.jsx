@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { ChevronLeft } from "lucide-react";
 import { Section } from "../components/career/section";
 import '../components/career/career.css';
-
+import Navbar from '../components/navbar/Navbar'
+import Footer from '../components/footer/Footer'
 
 
 export default function JobDetail() {
@@ -484,29 +485,30 @@ export default function JobDetail() {
 
     return (
         <>
+            <Navbar />
             <Section className="job-section">
                 <div className="job-container">
                     <Link to="/careers" className="job-back-link">
                         <ChevronLeft size={18} />
-                        <span>Open Roles</span>
+                        <span className="job-back-text">Open Roles</span>
                     </Link>
 
                     <h1 className="job-title">{job.title}</h1>
-
-                    <div className="job-meta">
-                        {[
-                            { label: "Date Posted", value: job.datePosted },
-                            { label: "Team", value: job.team },
-                            { label: "Location", value: job.location },
-                            { label: "Type", value: job.type },
-                        ].map((item, i) => (
-                            <div key={i} className="job-meta-item">
-                                <p className="job-meta-item__label">{item.label}</p>
-                                <p className="job-meta-item__value">{item.value}</p>
-                            </div>
-                        ))}
+                    <div className="job-meta-wrapper">
+                        <div className="job-meta">
+                            {[
+                                { label: "Date Posted", value: job.datePosted },
+                                { label: "Team", value: job.team },
+                                { label: "Location", value: job.location },
+                                { label: "Type", value: job.type },
+                            ].map((item, i) => (
+                                <div key={i} className="job-meta-item">
+                                    <p className="job-meta-item__label">{item.label}</p>
+                                    <p className="job-meta-item__value">{item.value}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-
                     {Array.isArray(job.image) ? (
                         <div className="job-images">
                             {job.image.map((img, i) => (
@@ -514,9 +516,12 @@ export default function JobDetail() {
                             ))}
                         </div>
                     ) : (
-                        <img src={job.image} alt={job.title} className="job-img-single" />
+                        job.image && (
+                            <div className="job-images">
+                                <img src={job.image} alt={job.title} className="job-img-wide" />
+                            </div>
+                        )
                     )}
-
                     <SectionBlock title="Job Summary">
                         <p>{job.summary}</p>
                     </SectionBlock>
@@ -598,6 +603,7 @@ export default function JobDetail() {
                     </div>
                 </div>
             </Section>
+            <Footer />
         </>
     );
 }

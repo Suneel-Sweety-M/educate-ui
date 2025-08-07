@@ -17,7 +17,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Careers from './pages/Careers';
 import CareerDetails from './pages/CareerDetails';
-import VerifyOTP from './pages/VerifyOTP';
+// import VerifyOTP from './pages/VerifyOTP';
 
 function App() {
   return (
@@ -41,7 +41,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ChangePassword />} />
-         <Route path="/verify-otp" element={<VerifyOTP />} />
+         {/* <Route path="/verify-otp" element={<VerifyOTP />} /> */}
         
         <Route path="/courses" element={<Courses />} />
         <Route path="/mission" element={<OurMission />} />

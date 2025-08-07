@@ -1,13 +1,17 @@
 import React from 'react';
 import Hero from '../components/home/Hero';
 import CourseCard from '../components/courses/CourseCard';
+import Navbar from '../components/navbar/Navbar';
 
 const Home = () => {
   return (
-    <div className="home-page">
-      <Hero />
-      <CourseCard/>
-    </div>
+    <>
+      <Navbar />
+      <div className="home-page">
+        <Hero />
+        <CourseCard />
+      </div>
+    </>
   );
 };
 

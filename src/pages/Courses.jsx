@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../components/courses/courses.css';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/navbar/Navbar';
+import Footer from '../components/footer/Footer';
 
 const HoverVideoCard = ({ course, video, slug }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -69,7 +71,6 @@ const HoverVideoCard = ({ course, video, slug }) => {
 };
 
 const Courses = () => {
-  const navigate = useNavigate();
 
   const courses = [
     {
@@ -166,26 +167,30 @@ const Courses = () => {
   ];
 
   return (
-    <div className="programs-page">
-      <div className="programs-header">
-        <div className="programs-title">
-          <img src="/launchpad.webp" alt="Digital Launchpad" className="programs-logo" width="20%" />
+    <>
+      <Navbar />
+      <div className="programs-page">
+        <div className="programs-header">
+          <div className="programs-title">
+            <img src="/launchpad.webp" alt="Digital Launchpad" className="programs-logo" width="20%" />
+          </div>
         </div>
-      </div>
 
-      <div className="programs-container">
-        <div className="programs-grid">
-          {courses.map((course) => (
-            <HoverVideoCard 
-              key={course.id} 
-              course={course} 
-              video={course.video} 
-              slug={course.slug}
-            />
-          ))}
+        <div className="programs-container">
+          <div className="programs-grid">
+            {courses.map((course) => (
+              <HoverVideoCard
+                key={course.id}
+                course={course}
+                video={course.video}
+                slug={course.slug}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

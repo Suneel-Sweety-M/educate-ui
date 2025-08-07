@@ -1,0 +1,184 @@
+/* Main wrapper floating on top */
+.navbar-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Inner container holding logo & menu */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: none;
+  padding: 0 30px;
+  pointer-events: auto;
+}
+
+/* Logo section */
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 1001;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.navbar-logo {
+  width: 220px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.navbar-logo-text {
+  color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Desktop Menu */
+.navbar-menu-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 10px 30px;
+  border-radius: 20px;
+  display: flex;
+  gap: 8px; /* Adjusted gap for tighter spacing */
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  margin-right: 0;
+}
+
+.navbar-menu-container a,
+.navbar-login-btn {
+  color: white;
+  text-decoration: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 18px; /* Even padding on all sides */
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu-container a:hover,
+.navbar-login-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Divider */
+.navbar-divider {
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 20px;
+}
+
+/* ✅ Mobile menu button container */
+.navbar-mobile-menu {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-menu-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ✅ Expanded mobile menu */
+.navbar-mobile-menu-expanded {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 200px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+.navbar-mobile-menu-expanded a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.navbar-mobile-menu-expanded a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 1024px) {
+  .navbar-inner {
+    padding: 0 20px;
+  }
+
+  .navbar-menu-container {
+    gap: 15px;
+    padding: 10px 20px;
+  }
+
+  .navbar-menu-container a,
+  .navbar-login-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .navbar-logo {
+    width: 70px;
+    height: 50px;
+  }
+
+  .navbar-logo-text {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    padding: 10px;
+  }
+
+  .navbar-menu-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .navbar-mobile-menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo-text {
+    font-size: 20px;
+  }
+
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+}

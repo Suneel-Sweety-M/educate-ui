@@ -1,0 +1,107 @@
+.footer {
+  background: linear-gradient(90deg, #031442 0%, #050505 70%);
+  color: #e6e6e680;
+  padding: 20px 0;
+  font-family: Thicccboi, sans-serif;
+  font-size: 1.2em;
+}
+
+.footer-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Changed from baseline to flex-start */
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.left-section {
+  display: flex;
+  gap: 50px;
+  flex: 2;
+  min-width: 400px;
+  align-items: flex-start; /* Added to align both items at the top */
+}
+
+.copyright {
+  font-weight: bold;
+  white-space: nowrap;
+  margin-top: 25px; /* Slightly pull the copyright up */
+}
+
+.footer-text {
+  flex: 1;
+  margin-top: -20px; /* Pull the entire text block up */
+}
+
+.footer-text p {
+  margin: 3px 0; /* Reduced vertical spacing between lines */
+  line-height: 1.4;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 200px;
+  align-items: flex-start; /* Align links with the top */
+  padding-top: 5px; /* Slight adjustment to match height */
+  margin-top: 25px;
+}
+
+@media (max-width: 1024px) {
+  .footer-container {
+    padding: 40px;
+  }
+  
+  .left-section {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 30px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .left-section {
+    flex-direction: column;
+    gap: 20px;
+    min-width: 100%;
+  }
+  
+  .footer-links {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .footer {
+    padding: 15px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 20px;
+  }
+  
+  .footer-text p {
+    font-size: 0.9em;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 15px 20px;
+  }
+}

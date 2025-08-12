@@ -1,9 +1,13 @@
 import React from 'react';
 import '../components/course-details/courseDetails.css'; // CSS path
+import Footer from '../components/footer/Footer';
+import Navbar from '../components/navbar/Navbar';
+
 
 const CourseDetails = () => {
   return (
     <div className="course-container">
+      <Navbar/>
       {/* Hero Section */}
       <section className="hero-container">
         <img src="/suji.webp" alt="Hero" className="hero-image" />
@@ -58,7 +62,7 @@ const CourseDetails = () => {
 
       {/* Curriculum Section */}
       <section className="curriculum">
-        <h2>Curriculum</h2>
+        {/* <h2>Curriculum</h2>
         <div className="module">
           <h3>Module 1: How To Unf*ck Your Life (27 Minutes)</h3>
           <p>Explore common roadblocks and follow a 7-minute exercise to break free...</p>
@@ -68,6 +72,18 @@ const CourseDetails = () => {
           <p>Master Iman's daily routine and learn how to implement the same focus strategies...</p>
         </div>
         <div className="module">
+          <h3>Module 3: Your First $1,000 (19 Minutes)</h3>
+          <p>Design your dream life and choose the right earning path for your personality...</p>
+        </div> */}
+         <h2>Curriculum</h2>
+        <div className="module">
+          <h3>Module 1: How To Unf*ck Your Life (27 Minutes)</h3>
+          <p>Explore common roadblocks and follow a 7-minute exercise to break free...</p>
+       
+       
+          <h3>Module 2: Monk Mode (1 Hour)</h3>
+          <p>Master Iman's daily routine and learn how to implement the same focus strategies...</p>
+        
           <h3>Module 3: Your First $1,000 (19 Minutes)</h3>
           <p>Design your dream life and choose the right earning path for your personality...</p>
         </div>
@@ -96,6 +112,8 @@ const CourseDetails = () => {
           business and global education.
         </p>
       </section>
+
+      <Footer/>
 
 
     </div>

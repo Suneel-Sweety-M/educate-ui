@@ -12,6 +12,8 @@
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 60px;
+  margin-top: 100px;
+
 }
 
 .hero-image {
@@ -36,18 +38,25 @@
   max-width: 1000px;
   margin: 0 auto 60px;
   padding: 0 20px;
+ 
+
 }
 
 .summary h2 {
   color: #e0e0e0;
   font-size: 36px;
-  margin-bottom: 20px;
+margin-bottom: 18px;
+  margin-right: 250px;
 }
 
 .summary p {
   font-size: 18px;
   color: rgba(230, 230, 230, 0.8);
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  margin-left: 250px;
+  margin-top: -50px;
+  
+  
 }
 
 .highlight {
@@ -57,6 +66,9 @@
   font-weight: 600;
   font-size: 20px;
   color: #fff;
+  margin-left: 250px;
+  margin-bottom: 60px;
+ 
 }
 
 /* Skills Section */
@@ -78,6 +90,8 @@
   gap: 15px;
   padding: 0;
   list-style: none;
+  margin-top: -50px;
+  margin-left: 250px;
 }
 
 .skills li {
@@ -91,26 +105,42 @@
 /* Curriculum Section */
 .curriculum {
   max-width: 1000px;
-  margin: 0 auto 60px;
+  margin: 0 auto 30px;
   padding: 0 20px;
+  margin-bottom:15px;
+
 }
 
 .curriculum h2 {
+
   font-size: 32px;
-  margin-bottom: 20px;
+
+   
 }
 
 .curriculum .module {
-  margin-bottom: 30px;
+  margin-bottom:70px;
+  margin-left: 250px;
+  margin-top: -50px;
+   
 }
 
 .curriculum h3 {
   color: #fff;
   font-size: 22px;
+  margin-bottom:40px;
+   /* margin-top: -40px; */
+    margin-top: 40px;
+
+    
 }
 
 .curriculum p {
   color: #ccc;
+   font-size: 15px;
+
+
+   
 }
 
 /* Instructor Section */
@@ -121,21 +151,29 @@
 }
 
 .instructor h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
+ color: #e0e0e0;
+  font-size: 36px;
+
+  margin-bottom: 18px;
+  margin-right: 500px;
 }
+
 
 .instructor-image {
   width: 100%;
   height: auto;
   border-radius: 12px;
+   margin-left:center;
+  
 }
 
 .instructor h3 {
   font-size: 1.8rem;
   margin-bottom: 16px;
-  text-align: center;
+  text-align:center;
+   
 }
+
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {

@@ -2,6 +2,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import './OurMission.css';
+import Footer from '../components/footer/Footer';
+import Navbar from '../components/navbar/Navbar';
 
 function OurMission() {
   const [count, setCount] = useState(0);
@@ -184,6 +186,7 @@ function OurMission() {
 
   return (
     <div className="our-mission">
+      <Navbar/>
       <div className="text-hole">
         <section className="mission-header">
           <div className="container" style={{ marginTop: '120px' }}>
@@ -333,6 +336,8 @@ function OurMission() {
           </div>
         </section>
       </div>
+              <Footer/>
+
     </div>
   );
 }

@@ -36,6 +36,7 @@
 
 .hero-title-line {
   display: block;
+  font-size: 50px;
 }
 
 .hero-description {
@@ -91,7 +92,7 @@
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: 70px; /* Adjusted from 60px */
+    font-size: 60px; /* Adjusted from 60px */
   }
   .hero-description {
     font-size: 22px; /* Adjusted from 18px */
@@ -107,7 +108,7 @@
   .hero-text-content,
   .cover-image-container {
     max-width: 100%;
-    padding-right: 0;
+    margin: 0;
   }
   
   .hero-title {

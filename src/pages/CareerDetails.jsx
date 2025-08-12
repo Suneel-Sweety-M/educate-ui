@@ -20,8 +20,8 @@ export default function JobDetail() {
             image: "https://educate.io/images/Vlog-Editor-Thumbnail-1-p-1080.jpg",
             summary: "Join Team Educate as a passionate Vlog Editor. Immerse yourself in the world of vlogging, where your editing expertise meets your storytelling flair. You’ll be at the forefront of crafting engaging and visually captivating vlogs for Iman Gadzhi and our content team, helping us deliver compelling narratives that resonate with our audience. If you’re excited about bringing vlogs to life and pushing the boundaries of online content, this is the role for you.",
             role: "Vlog Storyteller As a Vlog Editor at Team Educate, your main responsibility will be to create dynamic and visually engaging vlogs that connect with our audience on a personal level. You will work closely with Iman Gadzhi and the content team to develop and execute strategies that amplify our storytelling and elevate our content to new heights.The ideal candidate should have a proven track record of success in vlog editing, with a strong ability to craft compelling narratives. You should be a creative thinker who can identify opportunities to enhance our vlogs with your unique touch. Strong communication skills, both written and verbal, are essential.",
-            who: "We're looking for a creative mind with experience in motion design.",
-            responsibilities: [
+          who: "We're looking for a creative mind with experience in motion design.", // dont write backend
+            responsibilities: [ // dont want for backend
                 "Work on a wide variety of creative projects, with a primary focus on vlogs, but also including YouTube videos, Ads, Programs, and internal videos",
                 "Stay up-to-date with deliverables while constantly striving to improve your skills and our content output.",
                 "Attend daily team calls with the Editing team (12:00 GMT) and Content Creation team (15:00 GMT) from Monday to Friday.",
@@ -75,8 +75,21 @@ export default function JobDetail() {
                 "You prefer working in large, rigid corporate structures.",
                 "You’re unwilling to adapt to evolving project requirements.",
             ],
-            applyLink: "https://example.com/apply/vlog-editor",
+            applyLink: "https://example.com/apply/vlog-editor", 
         },
+
+
+
+
+
+
+
+
+
+
+
+
+
         {
             id: 2,
             slug: "closer",

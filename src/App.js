@@ -29,6 +29,7 @@ import AdminLectures from "./components/admin/lectures/AdminLectures";
 import AdminLectureAdd from "./components/admin/lectures/AdminLectureAdd";
 import AdminLectureEdit from "./components/admin/lectures/AdminLectureEdit";
 import StudentLectureView from "./components/student/StudentLectureView";
+import { ToastBar, Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -45,7 +46,16 @@ function App() {
         pauseOnHover
         theme="dark"
       />
-
+<Toaster
+        position="top-center"
+        toastOptions={{
+          duration: 5000,
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+        }}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -100,6 +110,7 @@ function App() {
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+
     </>
   );
 }

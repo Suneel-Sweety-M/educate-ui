@@ -28,7 +28,7 @@ const HoverVideoCard = ({ course, video, slug }) => {
 
   const handleClick = () => {
     if (slug) {
-      navigate(`/programs/${slug}`);
+      navigate(`/course/${slug}`);
     }
   };
 

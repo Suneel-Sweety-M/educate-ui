@@ -1,7 +1,8 @@
 import React from "react";
 import JobCard from "../components/career/JobCard";
 import '../components/career/career.css';
-
+import Navbar from '../components/navbar/Navbar'
+import Footer from '../components/footer/Footer'
 
 const Careers = () => {
   const jobs = [
@@ -50,16 +51,20 @@ const Careers = () => {
   ];
   document.title = "Open Roles - Educate"
   return (
-    <div className="bg-black">
-      <div className="careers-container">
-        <h1 className="careers-title">OPEN ROLES</h1>
-        <div className="jobs-grid">
-          {jobs.map((job) => (
-            <JobCard key={job.id} job={job} />
-          ))}
+    <>
+      <Navbar />
+      <div className="bg-black">
+        <div className="careers-container">
+          <h1 className="careers-title">OPEN ROLES</h1>
+          <div className="jobs-grid">
+            {jobs.map((job) => (
+              <JobCard key={job.id} job={job} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

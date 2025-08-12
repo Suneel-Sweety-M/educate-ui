@@ -19,7 +19,7 @@
   padding: 40px 0;
 }
 
-.container {
+.sujicontainer{
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -237,7 +237,8 @@
 .launchpad-section {
   position: relative;
   overflow: hidden;
-  min-height: 500px;
+  min-height: 50%;
+  width: 100%;
 }
 
 .launchpad-section .container {
@@ -251,11 +252,11 @@
 
 .launchpad-image {
   position: absolute;
-  display: flex;
+  /* display: flex; */
   top: 0;
   right: 0;
   bottom: 0;
-  width: 70%;
+  width:50%;
   background: url('https://educate.io/images/Cta-Image-DL-2.webp') no-repeat center;
   background-size: cover;
   z-index: 1;

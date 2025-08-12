@@ -189,7 +189,8 @@ function OurMission() {
       <Navbar/>
       <div className="text-hole">
         <section className="mission-header">
-          <div className="container" style={{ marginTop: '120px' }}>
+             
+          <div className="sujicontainer" style={{ marginTop: '120px' }}>
             <h1 ref={headingRef}>To Revolutionize The Education System</h1>
             <p style={{ marginTop: '-10px' }}>
               One student at a time, we hope to empower the next generation of <pre style={{ marginTop: '4px' }}>entrepreneurs.</pre>
@@ -198,7 +199,7 @@ function OurMission() {
         </section>
 
         <section className="mission-stats" style={{ marginTop: '100px' }}>
-          <div className="container">
+          <div className="sujicontainer">
             <div className="stat-box" ref={statRef}>
               <div className="stat-number">
                 <span>{count.toLocaleString()}</span>
@@ -213,7 +214,7 @@ function OurMission() {
         <hr className="white-line" />
 
         <section className="mission-founder">
-          <div className="container">
+          <div className="sujicontainer">
             <div className="founder-text">
               <p className="founder-name"> Iman Gadzhi</p>
               <h2 className="founder-title">Our Founder</h2>
@@ -224,7 +225,7 @@ function OurMission() {
           </div>
         </section>
         <section className="mission-founder">
-          <div className="container">
+          <div className="sujicontainerr">
             <div className="founder-text">
               <p className="founder-name">HOW WE GIVE BACK</p>
               <h2 className="founder-title">PHILANTHROPY</h2>
@@ -268,7 +269,7 @@ function OurMission() {
         <hr className="white-line" />
 
         <section className="mission-philanthropy">
-          <div className="container">
+          <div className="sujicontainer">
             <div className="card">
               <div className="card-text">
                 <h2>Schools in Nepal</h2>
@@ -296,7 +297,7 @@ function OurMission() {
         </section>
 
         <section className="mission-marathon">
-          <div className="container">
+          <div className="sujicontainer">
             <div className="card">
               <div className="card-text">
                 <h2>Company Marathon</h2>
@@ -320,7 +321,7 @@ function OurMission() {
         </section>
 
         <section className="launchpad-section">
-          <div className="container">
+          <div className="sujicontainer">
             <div className="launchpad-content">
               <h3 className="launchpad-heading" ref={launchpadHeadingRef}>
                 Ready to <br /> start DIGITAL LAUNCHPAD?
